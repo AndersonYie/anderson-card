@@ -1,132 +1,183 @@
+沒問題，我根據您上傳的參考圖（image_1adbd7.png）進行了視覺上的調整。
+
+這個版本的調整重點包括：
+
+全螢幕背景感：使用了深色的漸層背景，營造出高端、科技感的氛圍（符合自行車設計解決方案的形象）。
+
+毛玻璃效果 (Glassmorphism)：容器採用半透明磨砂質感，讓視覺重心集中在中間。
+
+按鈕質感升級：按鈕加上了光澤與陰影，點擊感更強。
+
+字體與排版：強化了 Molingbikes 的品牌名稱，並讓標語更有層次感。
+
+您可以直接複製以下代碼替換原有的 index.html：
+
+HTML
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molingbikes - 自行車設計與解決方案</title>
+    <title>Molingbikes | Professional Bicycle Solutions</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --line-color: #00c300;
-            --wechat-color: #07c160;
-            --bg-color: #f4f7f6;
+            --primary-bg: #1a1a1a;
+            --accent-blue: #3498db;
+            --line-green: #00c300;
+            --wechat-green: #07c160;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+            font-family: 'Segoe UI', Roboto, "Helvetica Neue", sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
+            /* 使用深色動態漸層背景 */
+            background: linear-gradient(135deg, #0f0f0f 0%, #2c3e50 100%);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            color: var(--primary-color);
+            padding: 20px;
+            color: white;
         }
 
-        .container {
-            width: 90%;
-            max-width: 400px;
-            background: white;
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .card {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px); /* 毛玻璃效果 */
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px 25px;
             text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
         }
 
         .logo {
-            width: 150px;
-            margin-bottom: 20px;
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
         }
 
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #ffffff, #bdc3c7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: #bdc3c7;
+            margin-bottom: 35px;
+            font-weight: 300;
             letter-spacing: 1px;
         }
 
-        .slogan {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .btn-group {
+        .button-stack {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
         }
 
         .btn {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
-            border-radius: 50px;
+            padding: 16px;
+            border-radius: 15px;
             text-decoration: none;
             color: white;
-            font-weight: bold;
             font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* LINE 按鈕樣式 */
+        .btn-line {
+            background: linear-gradient(135deg, #00e600 0%, #00c300 100%);
+            box-shadow: 0 8px 15px rgba(0, 195, 0, 0.2);
+        }
+
+        /* 微信按鈕樣式 */
+        .btn-wechat {
+            background: linear-gradient(135deg, #09d86d 0%, #07c160 100%);
+            box-shadow: 0 8px 15px rgba(7, 193, 96, 0.2);
         }
 
         .btn:active {
-            transform: scale(0.98);
+            transform: translateY(2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .btn-line {
-            background-color: var(--line-color);
-            box-shadow: 0 4px 14px rgba(0, 195, 0, 0.3);
+        /* 按鈕反光效果 */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            pointer-events: none;
         }
 
-        .btn-wechat {
-            background-color: var(--wechat-color);
-            box-shadow: 0 4px 14px rgba(7, 193, 96, 0.3);
-        }
-
-        .btn-icon {
-            width: 24px;
-            margin-right: 10px;
-        }
-
-        .footer {
+        .footer-info {
             margin-top: 40px;
-            font-size: 0.75rem;
-            color: #999;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .highlight {
+            color: var(--accent-blue);
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <img src="moling-logo.png" alt="Molingbikes Logo" class="logo">
-    
-    <h1>Molingbikes</h1>
-    
-    <div class="slogan">
-        <p>專業自行車設計 ‧ 全方位解決方案</p>
-        <p>Your Vision, Our Solution.</p>
-    </div>
+    <div class="card">
+        <div class="logo-container">
+            <img src="moling-logo.png" alt="Molingbikes" class="logo">
+        </div>
 
-    <div class="btn-group">
-        <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">
-            加 LINE 好友
-        </a>
+        <div class="brand-name">Molingbikes</div>
+        
+        <div class="tagline">
+            <p>自行車設計與解決方案</p>
+            <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">Bicycle Design & Solutions</p>
+        </div>
 
-        <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中，請稍候')">
-            加 微信 好友
-        </a>
-    </div>
+        <div class="button-stack">
+            <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">
+                <span>使用 LINE 聯繫</span>
+            </a>
 
-    <div class="footer">
-        © 2026 Molingbikes. All Rights Reserved.
+            <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中...')">
+                <span>使用 WeChat 聯繫</span>
+            </a>
+        </div>
+
+        <div class="footer-info">
+            <p>點擊上方按鈕開啟通訊軟體</p>
+            <p style="margin-top: 5px;">www.molingbikes.com</p>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
