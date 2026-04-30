@@ -3,78 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anderson Yie - Molingbikes</title>
+    <title>Molingbikes - Anderson Yie</title>
     <style>
         :root {
-            --line-green: #00c300;
-            --morandi-green: #8DA399; /* 莫蘭迪綠 */
-            --text-main: #2c3e50;
-            --text-sub: #7f8c8d;
+            --primary-color: #2c3e50;
+            --line-color: #00c300;
+            --wechat-teal: #008b8b; /* 藍綠色 */
+            --bg-color: #f4f7f6;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
         }
 
         body {
-            background-color: #ffffff; /* 純白底色 */
+            background-color: var(--bg-color);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: 'Helvetica Neue', Helvetica, Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
-            color: var(--text-main);
+            color: var(--primary-color);
         }
 
         .container {
-            width: 85%;
+            width: 95%;
             max-width: 400px;
-            padding: 20px;
+            background: white;
+            padding: 35px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* Logo 左移 */
-        .logo-box {
-            text-align: left;
+        /* 新增：Header 佈局 (Logo左，姓名右) */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 30px;
         }
 
         .logo {
-            height: 50px;
-            width: auto;
+            width: 150px;
+            height: auto;
         }
 
-        /* 個人資訊區 */
-        .profile-info {
-            text-align: left;
-            margin-bottom: 40px;
+        .name-card {
+            text-align: right;
         }
 
         .name-zh {
-            font-size: 24px;
+            font-size: 1.2rem;
             font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
 
         .name-en {
-            font-size: 20px;
+            font-size: 1rem;
+            font-family: Arial, Helvetica, sans-serif; /* 現代英文字體 */
             font-weight: 500;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 較好看的英文字體 */
-            color: var(--text-main);
-            margin-bottom: 10px;
         }
 
         .job-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-sub);
-            letter-spacing: 1.5px;
-            text-transform: uppercase; /* 職稱大寫增加專業感 */
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: right;
+            border-top: 1px solid #eee;
+            padding-top: 5px;
         }
 
-        /* 按鈕區 */
+        .slogan {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-align: center;
+            clear: both;
+        }
+
         .btn-group {
             display: flex;
             flex-direction: column;
@@ -85,62 +95,65 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 50px;
             text-decoration: none;
             color: white;
-            font-size: 16px;
             font-weight: bold;
-            transition: opacity 0.2s;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .btn:active {
-            opacity: 0.8;
+            transform: scale(0.98);
         }
 
         .btn-line {
-            background-color: var(--line-green);
+            background-color: var(--line-color);
+            box-shadow: 0 4px 14px rgba(0, 195, 0, 0.3);
         }
 
         .btn-wechat {
-            background-color: var(--morandi-green);
+            background-color: var(--wechat-teal);
+            box-shadow: 0 4px 14px rgba(0, 139, 139, 0.3);
         }
 
-        .slogan {
-            margin-top: 50px;
+        .footer {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: #999;
             text-align: center;
-            font-size: 13px;
-            color: #bdc3c7;
-            line-height: 1.8;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="logo-box">
-        <img src="moling-logo.png" alt="Molingbikes" class="logo">
+    <div class="header">
+        <img src="moling-logo.png" alt="Molingbikes Logo" class="logo">
+        <div class="name-card">
+            <div class="name-zh">易柏村</div>
+            <div class="name-en">Anderson Yie</div>
+            <div class="job-title">R&D Director</div>
+        </div>
     </div>
-
-    <div class="profile-info">
-        <div class="name-zh">易柏村</div>
-        <div class="name-en">Anderson Yie</div>
-        <div class="job-title">R&D Director</div>
+    
+    <div class="slogan">
+        <p>專業自行車設計 ‧ 全方位解決方案</p>
     </div>
 
     <div class="btn-group">
         <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">
-            LINE 聯繫
+            加 LINE 好友
         </a>
 
-        <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中')">
-            WeChat 聯繫
+        <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中，請稍候')">
+            加 微信 好友
         </a>
     </div>
 
-    <div class="slogan">
-        <p>懋綸有限公司 | Molingbikes</p>
-        <p>自行車設計與解決方案</p>
+    <div class="footer">
+        © 2026 Molingbikes. All Rights Reserved.
     </div>
 </div>
 
