@@ -3,166 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molingbikes | Professional Bicycle Solutions</title>
+    <title>Anderson Yie - Molingbikes</title>
     <style>
         :root {
-            --primary-bg: #1a1a1a;
-            --accent-blue: #3498db;
             --line-green: #00c300;
-            --wechat-green: #07c160;
+            --morandi-green: #8DA399; /* 莫蘭迪綠 */
+            --text-main: #2c3e50;
+            --text-sub: #7f8c8d;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, "Helvetica Neue", sans-serif;
         }
 
         body {
-            /* 使用深色動態漸層背景 */
-            background: linear-gradient(135deg, #0f0f0f 0%, #2c3e50 100%);
-            min-height: 100vh;
+            background-color: #ffffff; /* 純白底色 */
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            font-family: 'Helvetica Neue', Helvetica, Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            color: var(--text-main);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 400px;
             padding: 20px;
-            color: white;
         }
 
-        .card {
-            width: 100%;
-            max-width: 380px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px); /* 毛玻璃效果 */
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .logo-container {
-            margin-bottom: 25px;
+        /* Logo 左移 */
+        .logo-box {
+            text-align: left;
+            margin-bottom: 30px;
         }
 
         .logo {
-            width: 120px;
-            height: auto;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+            height: 50px;
+            width: auto;
         }
 
-        .brand-name {
-            font-size: 1.8rem;
-            font-weight: 700;
+        /* 個人資訊區 */
+        .profile-info {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .name-zh {
+            font-size: 24px;
+            font-weight: bold;
             letter-spacing: 2px;
-            margin-bottom: 8px;
-            background: linear-gradient(to right, #ffffff, #bdc3c7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
         }
 
-        .tagline {
-            font-size: 0.95rem;
-            color: #bdc3c7;
-            margin-bottom: 35px;
-            font-weight: 300;
-            letter-spacing: 1px;
+        .name-en {
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 較好看的英文字體 */
+            color: var(--text-main);
+            margin-bottom: 10px;
         }
 
-        .button-stack {
+        .job-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-sub);
+            letter-spacing: 1.5px;
+            text-transform: uppercase; /* 職稱大寫增加專業感 */
+        }
+
+        /* 按鈕區 */
+        .btn-group {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 15px;
         }
 
         .btn {
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 16px;
-            border-radius: 15px;
+            border-radius: 12px;
             text-decoration: none;
             color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        /* LINE 按鈕樣式 */
-        .btn-line {
-            background: linear-gradient(135deg, #00e600 0%, #00c300 100%);
-            box-shadow: 0 8px 15px rgba(0, 195, 0, 0.2);
-        }
-
-        /* 微信按鈕樣式 */
-        .btn-wechat {
-            background: linear-gradient(135deg, #09d86d 0%, #07c160 100%);
-            box-shadow: 0 8px 15px rgba(7, 193, 96, 0.2);
+            font-size: 16px;
+            font-weight: bold;
+            transition: opacity 0.2s;
         }
 
         .btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            opacity: 0.8;
         }
 
-        /* 按鈕反光效果 */
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255,255,255,0.1);
-            transform: rotate(45deg);
-            pointer-events: none;
+        .btn-line {
+            background-color: var(--line-green);
         }
 
-        .footer-info {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.3);
+        .btn-wechat {
+            background-color: var(--morandi-green);
         }
 
-        .highlight {
-            color: var(--accent-blue);
-            font-weight: bold;
+        .slogan {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 13px;
+            color: #bdc3c7;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="logo-container">
-            <img src="moling-logo.png" alt="Molingbikes" class="logo">
-        </div>
-
-        <div class="brand-name">Molingbikes</div>
-        
-        <div class="tagline">
-            <p>自行車設計與解決方案</p>
-            <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">Bicycle Design & Solutions</p>
-        </div>
-
-        <div class="button-stack">
-            <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">
-                <span>使用 LINE 聯繫</span>
-            </a>
-
-            <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中...')">
-                <span>使用 WeChat 聯繫</span>
-            </a>
-        </div>
-
-        <div class="footer-info">
-            <p>點擊上方按鈕開啟通訊軟體</p>
-            <p style="margin-top: 5px;">www.molingbikes.com</p>
-        </div>
+<div class="container">
+    <div class="logo-box">
+        <img src="moling-logo.png" alt="Molingbikes" class="logo">
     </div>
+
+    <div class="profile-info">
+        <div class="name-zh">易柏村</div>
+        <div class="name-en">Anderson Yie</div>
+        <div class="job-title">R&D Director</div>
+    </div>
+
+    <div class="btn-group">
+        <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">
+            LINE 聯繫
+        </a>
+
+        <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中')">
+            WeChat 聯繫
+        </a>
+    </div>
+
+    <div class="slogan">
+        <p>懋綸有限公司 | Molingbikes</p>
+        <p>自行車設計與解決方案</p>
+    </div>
+</div>
 
 </body>
 </html>
