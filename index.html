@@ -8,7 +8,7 @@
         :root {
             --primary-color: #2c3e50;
             --line-color: #00c300;
-            --wechat-teal: #20b2aa; /* 您指定的藍綠色 */
+            --wechat-teal: #20b2aa; 
             --bg-color: #f4f7f6;
         }
 
@@ -37,11 +37,10 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* 第一層：Logo與姓名緊鄰 */
         .top-row {
             display: flex;
-            align-items: center; /* 垂直置中 */
-            gap: 12px; /* Logo與姓名的間距 */
+            align-items: center;
+            gap: 30px; /* 姓名往右移，增加間距 */
         }
 
         .logo {
@@ -66,13 +65,15 @@
             color: #333;
         }
 
-        /* 第二層：職稱獨立一行且靠右 */
+        /* 職稱區域：加回灰色細線並調高位置 */
         .title-row {
             width: 100%;
             text-align: right;
-            margin-top: 5px;
+            margin-top: 2px; /* 調高職稱位置 */
             margin-bottom: 25px;
             padding-right: 5px;
+            border-top: 1px solid #eeeeee; /* 加回灰色細線 */
+            padding-top: 5px;
         }
 
         .job-title {
@@ -83,7 +84,6 @@
             font-family: 'Segoe UI', Arial, sans-serif;
         }
 
-        /* 公司資訊區域 (補回消失的內容) */
         .brand-section {
             text-align: center;
             margin-bottom: 30px;
@@ -102,7 +102,6 @@
             line-height: 1.6;
         }
 
-        /* 按鈕區域 */
         .btn-group {
             display: flex;
             flex-direction: column;
