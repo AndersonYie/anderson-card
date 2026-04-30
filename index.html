@@ -8,7 +8,7 @@
         :root {
             --primary-color: #2c3e50;
             --line-color: #00c300;
-            --wechat-teal: #20b2aa; /* 藍綠色 LightSeaGreen */
+            --wechat-teal: #20b2aa; /* 您指定的藍綠色 */
             --bg-color: #f4f7f6;
         }
 
@@ -37,63 +37,72 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* Header 區域：Logo 與 姓名緊鄰 */
-        .header-top {
+        /* 第一層：Logo與姓名緊鄰 */
+        .top-row {
             display: flex;
-            align-items: center; /* 讓 Logo 和姓名垂直置中對齊 */
-            gap: 15px; /* Logo 與姓名的間距 */
-            margin-bottom: 5px;
+            align-items: center; /* 垂直置中 */
+            gap: 12px; /* Logo與姓名的間距 */
         }
 
         .logo {
-            width: 130px; /* 稍微縮小一點點讓比例更好看 */
+            width: 120px;
             height: auto;
         }
 
-        .name-box {
+        .name-info {
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
         .name-zh {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: bold;
             line-height: 1.2;
         }
 
         .name-en {
             font-size: 1rem;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             color: #333;
         }
 
-        /* 職稱單獨一行，完全靠右 */
-        .job-row {
+        /* 第二層：職稱獨立一行且靠右 */
+        .title-row {
             width: 100%;
             text-align: right;
-            margin-bottom: 30px;
-            border-top: 1px solid #eee; /* 加一條細線區隔 */
-            padding-top: 8px;
+            margin-top: 5px;
+            margin-bottom: 25px;
+            padding-right: 5px;
         }
 
         .job-title {
-            font-size: 0.8rem;
-            color: #888;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            color: #7f8c8d;
             font-weight: 600;
-            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* 公司資訊區域 (補回消失的內容) */
+        .brand-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .brand-name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
         }
 
         .slogan {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 30px;
-            text-align: center;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
         }
 
+        /* 按鈕區域 */
         .btn-group {
             display: flex;
             flex-direction: column;
@@ -138,20 +147,24 @@
 <body>
 
 <div class="container">
-    <div class="header-top">
+    <div class="top-row">
         <img src="moling-logo.png" alt="Molingbikes Logo" class="logo">
-        <div class="name-box">
+        <div class="name-info">
             <div class="name-zh">易柏村</div>
             <div class="name-en">Anderson Yie</div>
         </div>
     </div>
 
-    <div class="job-row">
+    <div class="title-row">
         <span class="job-title">R&D Director</span>
     </div>
     
-    <div class="slogan">
-        <p>專業自行車設計 ‧ 全方位解決方案</p>
+    <div class="brand-section">
+        <h1 class="brand-name">Molingbikes</h1>
+        <div class="slogan">
+            <p>專業自行車設計 ‧ 全方位解決方案</p>
+            <p>Your Vision, Our Solution.</p>
+        </div>
     </div>
 
     <div class="btn-group">
