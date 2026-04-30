@@ -8,7 +8,7 @@
         :root {
             --primary-color: #2c3e50;
             --line-color: #00c300;
-            --wechat-teal: #008b8b; /* 藍綠色 */
+            --wechat-teal: #20b2aa; /* 藍綠色 LightSeaGreen */
             --bg-color: #f4f7f6;
         }
 
@@ -29,60 +29,69 @@
         }
 
         .container {
-            width: 95%;
+            width: 92%;
             max-width: 400px;
             background: white;
-            padding: 35px 20px;
+            padding: 35px 25px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* 新增：Header 佈局 (Logo左，姓名右) */
-        .header {
+        /* Header 區域：Logo 與 姓名緊鄰 */
+        .header-top {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 30px;
+            align-items: center; /* 讓 Logo 和姓名垂直置中對齊 */
+            gap: 15px; /* Logo 與姓名的間距 */
+            margin-bottom: 5px;
         }
 
         .logo {
-            width: 150px;
+            width: 130px; /* 稍微縮小一點點讓比例更好看 */
             height: auto;
         }
 
-        .name-card {
-            text-align: right;
+        .name-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .name-zh {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            margin-bottom: 2px;
+            line-height: 1.2;
         }
 
         .name-en {
             font-size: 1rem;
-            font-family: Arial, Helvetica, sans-serif; /* 現代英文字體 */
-            font-weight: 500;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
+        }
+
+        /* 職稱單獨一行，完全靠右 */
+        .job-row {
+            width: 100%;
+            text-align: right;
+            margin-bottom: 30px;
+            border-top: 1px solid #eee; /* 加一條細線區隔 */
+            padding-top: 8px;
         }
 
         .job-title {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: right;
-            border-top: 1px solid #eee;
-            padding-top: 5px;
+            font-size: 0.8rem;
+            color: #888;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .slogan {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.95rem;
+            color: #555;
             margin-bottom: 30px;
-            line-height: 1.6;
             text-align: center;
-            clear: both;
+            letter-spacing: 1px;
         }
 
         .btn-group {
@@ -101,27 +110,27 @@
             color: white;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s;
         }
 
         .btn:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
 
         .btn-line {
             background-color: var(--line-color);
-            box-shadow: 0 4px 14px rgba(0, 195, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 195, 0, 0.2);
         }
 
         .btn-wechat {
             background-color: var(--wechat-teal);
-            box-shadow: 0 4px 14px rgba(0, 139, 139, 0.3);
+            box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
         }
 
         .footer {
             margin-top: 40px;
             font-size: 0.75rem;
-            color: #999;
+            color: #bbb;
             text-align: center;
         }
     </style>
@@ -129,13 +138,16 @@
 <body>
 
 <div class="container">
-    <div class="header">
+    <div class="header-top">
         <img src="moling-logo.png" alt="Molingbikes Logo" class="logo">
-        <div class="name-card">
+        <div class="name-box">
             <div class="name-zh">易柏村</div>
             <div class="name-en">Anderson Yie</div>
-            <div class="job-title">R&D Director</div>
         </div>
+    </div>
+
+    <div class="job-row">
+        <span class="job-title">R&D Director</span>
     </div>
     
     <div class="slogan">
@@ -148,7 +160,7 @@
         </a>
 
         <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中，請稍候')">
-            加 微信 好友
+            加 WeChat 好友
         </a>
     </div>
 
