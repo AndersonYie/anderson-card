@@ -40,7 +40,8 @@
         .top-row {
             display: flex;
             align-items: center;
-            gap: 30px; /* 姓名往右移，增加間距 */
+            /* gap: 60px 是控制 Logo 到姓名之間的距離，您可以調整這個數值 */
+            gap: 30px; 
         }
 
         .logo {
@@ -65,14 +66,13 @@
             color: #333;
         }
 
-        /* 職稱區域：加回灰色細線並調高位置 */
         .title-row {
             width: 100%;
             text-align: right;
-            margin-top: 2px; /* 調高職稱位置 */
+            margin-top: 3px; /* 這裡控制職稱離姓名多近，數字越小越高 */
             margin-bottom: 25px;
             padding-right: 5px;
-            border-top: 1px solid #eeeeee; /* 加回灰色細線 */
+            border-top: 1px solid #eeeeee; /* 這就是您要的灰色細線 */
             padding-top: 5px;
         }
 
@@ -148,15 +148,13 @@
 <div class="container">
     <div class="top-row">
         <img src="moling-logo.png" alt="Molingbikes Logo" class="logo">
+        
         <div class="name-info">
-            <div class="name-zh">易柏村</div>
-            <div class="name-en">Anderson Yie</div>
-        </div>
+            <div class="name-zh">易柏村</div> <div class="name-en"> Anderson Yie</div> </div>
     </div>
 
     <div class="title-row">
-        <span class="job-title">R&D Director</span>
-    </div>
+        <span class="job-title">R&D Director</span> </div>
     
     <div class="brand-section">
         <h1 class="brand-name">Molingbikes</h1>
@@ -167,13 +165,8 @@
     </div>
 
     <div class="btn-group">
-        <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">
-            加 LINE 好友
-        </a>
-
-        <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中，請稍候')">
-            加 WeChat 好友
-        </a>
+        <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">加 LINE 好友</a>
+        <a href="#" class="btn btn-wechat" onclick="alert('微信鏈結建置中')">加 WeChat 好友</a>
     </div>
 
     <div class="footer">
