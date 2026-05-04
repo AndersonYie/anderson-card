@@ -40,7 +40,7 @@
         .top-row {
             display: flex;
             align-items: center;
-            gap: 60px; 
+            gap: 60px; /* Logo 與姓名的間距 */
         }
 
         .logo {
@@ -51,8 +51,7 @@
         .name-info {
             display: flex;
             flex-direction: column;
-            /* 保持您調整的姓名下移高度 */
-            margin-top: 10px; 
+            margin-top: 10px; /* 姓名整體下移高度 */
         }
 
         .name-zh {
@@ -65,8 +64,7 @@
             font-size: 1rem;
             font-family: Arial, sans-serif;
             color: #333;
-            /* 保持您調整的中英文間距 */
-            margin-top: 5px; 
+            margin-top: 5px; /* 中英文間距 */
         }
 
         .title-row {
@@ -75,7 +73,7 @@
             margin-top: 1px; 
             margin-bottom: 25px;
             padding-right: 5px;
-            border-top: 1px solid #eeeeee; 
+            border-top: 1px solid #eeeeee; /* 職稱上方的灰色細線 */
             padding-top: 5px;
         }
 
@@ -122,6 +120,9 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: transform 0.2s;
+            cursor: pointer;
+            border: none;
+            width: 100%;
         }
 
         .btn:active {
@@ -138,6 +139,14 @@
             box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
         }
 
+        .copy-tip {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: center;
+            margin-top: -10px;
+            min-height: 1em;
+        }
+
         .footer {
             margin-top: 40px;
             font-size: 0.75rem;
@@ -151,7 +160,6 @@
 <div class="container">
     <div class="top-row">
         <img src="moling-logo.png" alt="Molingbikes Logo" class="logo">
-        
         <div class="name-info">
             <div class="name-zh">易柏村</div>
             <div class="name-en">Anderson Yie</div>
@@ -172,14 +180,38 @@
 
     <div class="btn-group">
         <a href="https://line.me/ti/p/RkjNNAeJX_" class="btn btn-line">加 LINE 好友</a>
-        <!-- 已修改為直接讀取 GitHub 上的微信圖片 -->
-        <a href="Anderson-WeChat.jpg" class="btn btn-wechat">加 WeChat 好友</a>
+
+        <button class="btn btn-wechat" onclick="copyWeChatLink()">
+            點擊複製 WeChat 連結
+        </button>
+        <p id="copy-tip" class="copy-tip">複製後貼到微信內開啟即可加好友</p>
     </div>
 
     <div class="footer">
         © 2026 Molingbikes. All Rights Reserved.
     </div>
 </div>
+
+<script>
+function copyWeChatLink() {
+    const link = "https://short.wailian2.cn/l/17o7LGGG5H2Pm72C";
+    
+    // 執行複製功能 
+    navigator.clipboard.writeText(link).then(() => {
+        const tip = document.getElementById('copy-tip');
+        tip.innerText = "✅ 連結已複製！請到微信貼上開啟";
+        tip.style.color = "#20b2aa";
+        
+        // 3秒後恢復原始提示語 
+        setTimeout(() => {
+            tip.innerText = "複製後貼到微信內開啟即可加好友";
+            tip.style.color = "#888";
+        }, 3000);
+    }).catch(err => {
+        console.error('無法複製', err);
+    });
+}
+</script>
 
 </body>
 </html>
